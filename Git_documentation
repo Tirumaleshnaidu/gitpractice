@@ -1,0 +1,134 @@
+Github - a website to host your code online, can share between the peeers as we write teh code in our local repo.
+Repo - a place where the project files are kept. It contains the full hsitroty of your project. Code, readme files, 
+clone - downlading the project data from remote hosted place into our local repo. downlaoding the exact replcia of master
+.git - folder it tracks teh files. ensures nothig is accidently overwritten.
+add - can add teh modified file into git as an intentional change.
+commit - it saves your file, with the message fo rthe required chagne
+push - ulaods the lcal repo data into remote repo like Github where proect data is shared among peers.
+pull - downlaod chagnes from remtoe repo, to your local amchine. the opposite of psuh.
+
+Current revision is called head. Tag defines each revisoin.
+ 
+Master branhc - where everyday dev happens
+Maintaicn branch - where bug fixes for older releaess.
+Feature branch - for a new feature requiring intrusive changes can use this without distroubi main branch
+
+
+
+//diff b/w pull and clone
+clone makes a connectiona nd copies enteir master. 
+Pull  0 the connection is already made and it pull only teh modified files to the local machine.
+
+once you create a file you need to tell teh git to track it usign git add before saving to your lcoal repo usignn git commit
+the file will be in index area after committing it will be in local git repo.
+
+git add <your file>
+
+///ssh keys
+
+25:43
+
+/////////////////////////////////////////
+rebase - all teh changes in the featre branch is merged into master by one by one.
+Both  are used to merge two branches. git merge adds a new commit and preserve teh histroy.
+Git rebase moves a feature branch into master.
+
+Git merge - suppose there is a file in 2 branches. any it got modfied by developers, wehn we try to merge it will cerat a merge conflict.
+ fist update the local repo - git pull
+then using git status - see teh conflict file
+3. oepn teh conflict file
+4. once you manuallly resolve the chanfes sae the file adn commit
+5. add them to the statin area and commit. git add <file1><file2>
+
+then finally push teh changes to merged repi. tips -regualrtl pull and update, 
+
+/
+How to revert a commit thars already been pusheed?
+Remove or fix the bad commit and push it to the remote repo
+git commit -m "commit messae"
+
+or can undo changes by git revert <commit ID>
+
+/
+git reset-mixed : it is used to undo changes made in teh working directory and staging area.
+git merge-abort: abort helps to stop teh merge process and return abck the to teh state before merge began.
+
+/
+ waht is the command to lsit changed files in partifular hash
+git diff-tree -r{commit-hash} //-r allows to lsit individual fiels.
+
+/
+hwo will you fix a broken commit?
+git  commit -amend /	it helps to combine staged chagnees with the previosu commits instad of createign a fresh new commit.
+/
+
+git stash drop
+it remvoes the stashed item. this commadn will remvoe the last stashed item. if u want to remoe particular 
+git stash drop @{tiru}
+
+/
+gir cherry-pick
+This commadn enables you to pick up commits from a branch within a repo and apply it to anotehr branch. 
+git cherry-pick <commit-id> // you can get the commit id from git log
+suppose there are 2 branches
+a nad b
+need to amke a commit on branch b but made it on branch a
+
+to undo this , it wont uno actually it adds new commit.
+
+
+swithc to branch b and cherry pick the commit.
+
+git chrecout b
+git commitd
+
+/
+diff between git pull and git push
+Git fetch - it is used to retreice changes form remtoe repo without automatically merging into your curertn barnch. it downloads any new branches 
+tags, or commtis from the remtoe repo, updating your local tracking branches.
+
+	Git fetch doesny update or modify code dataase, we can see what has chnaged on teh remote repo sinces your last commit.
+
+git fetch <remote>
+
+git pull - git fetch + merge
+
+it fetches codce form remtoe and automacifallt  merges into your local branch.
+git pull <remote> <branch>
+
+Git fetch is safer as it allows you to revidw the canges before merging them into your barnch.
+
+	
+/
+What is the origin in git?
+origin is te remote repo that project was cloned. 
+
+/
+diff between resettinga adn reverting?
+git reset - it chages teh state of the branch to a previosu one by remove all of state to a desired commit
+git revert -it does it through creating new reversal commits and keepign the original one intact.
+
+/
+wat is staginga aread or index in git?
+it is in local. local has workign direcoy , staging and local repo then it will be pushed to remtoe.
+Every changes is fist verfied in saging area, and then change is commtied to local repo.
+
+/
+what is the purpsoe of branching and its types?
+	Feature bar ch - A feature branch model keeps all of the chages for a particular feature inside of a branch. when teh feature is 
+fully tested and validated by automatic tests, the branh is tehm merged into master.
+
+Task branch - In this branch, each task is implemented on its own branch with the task key included in the branch name. It is easy to see which code implements which task, just look for the task key in the branch name.
+
+Release branching — Once the develop branch has acquired enough features for a release, you can clone that branch to form a Release branch. Creating this branch starts the next release cycle, so no new features can be added after this point, only bug fixes, documentation generation, and other release-oriented tasks should go in this branch. Once it is ready to ship, the release gets merged into master and tagged with a version number.
+
+/
+what is a head in Git?
+head is the latest commit in the latest checout branch. It changes its position after a new commit.
+/ what work is restoited when tehdelte	branch is recovered?
+stashed dta and saevd in stash index list will be revoerved back. any untacked files will be lost. 
+git status: To know the comparison between the working directories and index.
+git branch –d [branch name] — It is used to delete the current branch name specified.
+git show [commit] — This is used to display the metadata and all the content related changes of a particular commit.
+git tag [commitID] — This is used to give particular tags to the code commits.
+git diff [first branch] [second branch] — it is used to display the differences present between the two branches.
