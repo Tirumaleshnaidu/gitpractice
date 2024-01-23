@@ -26,8 +26,6 @@ git add <your file>
 
 ///ssh keys
 
-25:43
-
 /////////////////////////////////////////
 rebase - all teh changes in the featre branch is merged into master by one by one.
 Both  are used to merge two branches. git merge adds a new commit and preserve teh histroy.
@@ -125,6 +123,7 @@ Release branching — Once the develop branch has acquired enough features for a
 /
 what is a head in Git?
 head is the latest commit in the latest checout branch. It changes its position after a new commit.
+
 / what work is restoited when tehdelte	branch is recovered?
 stashed dta and saevd in stash index list will be revoerved back. any untacked files will be lost. 
 git status: To know the comparison between the working directories and index.
