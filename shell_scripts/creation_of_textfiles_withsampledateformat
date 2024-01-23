@@ -1,0 +1,19 @@
+#!/bin/bash
+# make sure to give user permissions for this file . chmod +x creation_of_textfiles_withsampledateformat
+set -x # it enables debugging
+#we need 5 files
+#can create it manually by using 5 touch command, thats one way of doing the crappy manual work
+#as it is iteration can use for loop
+for i in {1..30}
+do
+    # Generate the current date in dd_mm_yyyy format
+    current_date=$(date -d "+$i days" "+%d_%m_%Y") # can use current_date=$(date -d "+$i days" "+%d%m%Y")
+
+    # Create a text file with the current date as the filename
+    touch "$current_date.Backuplogs.txt"
+
+    # Optionally, you can add content to the files
+    # echo "Hello, this is $current_date" > "$current_date.txt"
+done
+
+echo "Text files created successfully!"
