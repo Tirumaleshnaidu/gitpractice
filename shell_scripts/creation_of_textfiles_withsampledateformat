@@ -4,7 +4,7 @@ set -x # it enables debugging
 #we need 5 files
 #can create it manually by using 5 touch command, thats one way of doing the crappy manual work
 #as it is iteration can use for loop
-for i in {1..30}
+for i in {1..30} # it creates 30 files
 do
     # Generate the current date in dd_mm_yyyy format
     current_date=$(date -d "+$i days" "+%d_%m_%Y") # can use current_date=$(date -d "+$i days" "+%d%m%Y")
