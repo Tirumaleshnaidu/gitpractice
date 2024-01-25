@@ -1,0 +1,18 @@
+#filtering csv file
+
+#!/usr/bin/env bash
+set -x
+wget https://public.karat.io/content/test/test_file.txt
+bookscount=$((`awk '{print NR}' test_file.txt | tail -1`))
+awk -F, '{print $NF}' test_file.txt > sample3.txt
+pagecount=0
+# Iterate through each number in the file
+for number in $(cat sample3.txt); do
+    pagecount=$((pagecount + number))
+done
+
+# Print the total sum
+echo "the total bookcount is $bookscount"
+echo  "total pagecount is $pagecount"
+rm test_file.txt
+rm sample3.txt
