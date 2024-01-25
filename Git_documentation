@@ -24,8 +24,6 @@ the file will be in index area after committing it will be in local git repo.
 
 git add <your file>
 
-///ssh keys
-
 /////////////////////////////////////////
 rebase - all teh changes in the featre branch is merged into master by one by one.
 Both  are used to merge two branches. git merge adds a new commit and preserve teh histroy.
